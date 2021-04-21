@@ -5,7 +5,9 @@ export type UnControlledInputPropsType = {
     onChange: (e: ChangeEvent<HTMLInputElement>) => void
 }
 
-export function UnControlledInput(props: UnControlledInputPropsType) {
+export const UnControlledInput = React.memo(UnControlledInputSecret)
+
+function UnControlledInputSecret(props: UnControlledInputPropsType) {
     const [value, setValue] = useState<string>("");
     const getValue = (e: ChangeEvent<HTMLInputElement>) => {
         setValue(e.currentTarget.value)

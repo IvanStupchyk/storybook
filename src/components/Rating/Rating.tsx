@@ -8,7 +8,9 @@ export type RatingPropsType = {
     onClick: (value: RatingValueType) => void
 }
 
-function Rating(props: RatingPropsType) {
+const Rating = React.memo(RatingSecret)
+
+function RatingSecret(props: RatingPropsType) {
     return (
         <div>
             <Star onClick={props.onClick} selected={props.value > 0} value={1}/>

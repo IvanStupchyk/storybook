@@ -12,16 +12,18 @@ export type SelectPropsType = {
     items: ItemType[]
 }
 
-export function Select(props: SelectPropsType) {
+export const Select = React.memo(SelectSecret)
+
+function SelectSecret(props: SelectPropsType) {
     const [active, setActive] = useState(false)
     const [hoveredElementValue, setHoveredElementValue] = useState(props.value)
 
     const selectedItem = props.items.find(v => v.value === props.value)
     const hoveredItem = props.items.find(v => v.value === hoveredElementValue)
 
-    useEffect( () => {
+    useEffect(() => {
         setHoveredElementValue(props.value)
-        }, [props.value])
+    }, [props.value])
 
     const toggleItems = () => setActive(!active)
     const onItemClick = (value: any) => {
@@ -53,25 +55,6 @@ export function Select(props: SelectPropsType) {
         }
     }
 
-    // if (props.items[i].value === hoveredElementValue) {
-    //     if (e.key === 'ArrowDown') {
-    //         if (props.items[i].value === props.items[props.items.length - 1].value) {
-    //             break
-    //         }
-    //         props.onChange(props.items[i + 1].value)
-    //         setHoveredElementValue(props.items[i + 1].value)
-    //         break
-    //     }
-    //     if (e.key === 'ArrowUp') {
-    //         if (props.items[i].value === props.items[0].value) {
-    //             break
-    //         }
-    //         props.onChange(props.items[i - 1].value)
-    //         setHoveredElementValue(props.items[i - 1].value)
-    //         break
-    //     }
-    // }
-
     return (
         <div className={s.select} onKeyUp={OnKeyUp} tabIndex={0}>
             <span className={s.main} onClick={toggleItems}>{selectedItem && selectedItem.title}</span>
@@ -79,9 +62,7 @@ export function Select(props: SelectPropsType) {
             <div className={s.items}>
                 {props.items.map(i => <div onMouseEnter={() => setHoveredElementValue(i.value)}
                                            className={`${s.item} ${hoveredItem === i ? s.selected : ''}`} key={i.value}
-                                           onClick={() => {
-                                               onItemClick(i.value)
-                                           }}>
+                                           onClick={() => {onItemClick(i.value)}}>
                     {i.title}</div>)}
             </div>
             }

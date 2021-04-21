@@ -7,7 +7,9 @@ type StarPropsType = {
     onClick: (value: RatingValueType) => void
 }
 
-function Star(props: StarPropsType) {
+const Star = React.memo(StarSecret)
+
+function StarSecret(props: StarPropsType) {
     return <span onClick={() => {
         props.onClick(props.value)
     }}>{props.selected ? <b>star </b> : "star "}</span>

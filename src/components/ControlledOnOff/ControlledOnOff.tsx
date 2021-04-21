@@ -6,7 +6,9 @@ export type OnOffPropsType = {
     onClick: (value: boolean) => void
 }
 
-export const ControlledOnOff = (props: OnOffPropsType) => {
+export const ControlledOnOff = React.memo(ControlledOnOffSecret)
+
+function ControlledOnOffSecret(props: OnOffPropsType) {
     // let [on, setOn] = useState(false);
 
     const onStyle = {
