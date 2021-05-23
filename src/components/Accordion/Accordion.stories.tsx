@@ -4,11 +4,11 @@ import {Accordion, AccordionPropsType} from "./Accordion";
 import {Story} from "@storybook/react";
 
 export default {
-    title: 'controlled components/Accordion',
+    title: 'controlled components/UseEffect',
     component: Accordion
 }
 
-const callBack = action("Accordion mode changed")
+const callBack = action("UseEffect mode changed")
 const onClickCallBack = action("some item was clicked")
 
 const Template: Story<AccordionPropsType> = (args) => <Accordion {...args} />

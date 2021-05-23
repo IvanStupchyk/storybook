@@ -4,7 +4,7 @@ import {UnControlledAccordion, UnControlledAccordionPropsType} from "./UnControl
 import {Story} from "@storybook/react";
 
 export default {
-    title: 'uncontrolled components/Uncontrolled Accordion',
+    title: 'uncontrolled components/Uncontrolled UseEffect',
     component: UnControlledAccordion
 }
 

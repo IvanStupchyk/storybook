@@ -22,8 +22,8 @@ function App() {
       {/*<PageTitle title={"My friends"} />*/}
       {/*Article 1*/}
 
-      {/*<Accordion titleValue={"Menu"} collapsed={true}/>*/}
-      {/*<Accordion titleValue={"Users"}*/}
+      {/*<UseEffect titleValue={"Menu"} collapsed={true}/>*/}
+      {/*<UseEffect titleValue={"Users"}*/}
       {/*           collapsed={accordionCollapsed}*/}
       {/*           onChange={() => {setAccordionCollapsed(!accordionCollapsed)}}*/}
       {/*/>*/}

@@ -8,7 +8,7 @@ export default {
     component: Select
 }
 
-const callBack = action("Accordion mode changed")
+const callBack = action("UseEffect mode changed")
 const onClickCallBack = action("some item was clicked")
 
 const Template: Story<SelectPropsType> = (args) => <Select {...args} />
